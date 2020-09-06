@@ -38,7 +38,7 @@ body {
 }
 
 #quizz-section {
-        display: none;
+  display: none;
 }
 
 .centered-element {
@@ -63,8 +63,41 @@ body {
   animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
+.ffdude {
+  width: 70px;
+  margin-top: 20px;
+}
 
+#quizz-section {
+  height: 600px;
+  margin-top: 100px;
+}
 
+#quizz-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  line-height: 40px;
+  margin: 100px;
+}
+
+#answers {
+  align-items: center;
+  align-content: center;
+}
+
+.answers-style {
+  padding: 10px;
+  border-color: hotpink;
+
+}
+
+#hint {
+  text-align: center;
+  border-color: greenyellow;
+}
 
 
 
@@ -146,7 +179,4 @@ button:hover {
   }
 }
 
-.ffdude {
-  width: 70px;
-  margin-top: 20px;
-}
+

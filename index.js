@@ -22,7 +22,7 @@ function delayedStory() {
   setTimeout(() => {
     animationSelect.style.display = "none";
     storyIntroduction.style.display = "block";
-  }, 2000); // set time out between ",)"
+  },); // set time out between ",)"
 }
 
 // LISTENERS
