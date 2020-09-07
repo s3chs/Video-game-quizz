@@ -20,6 +20,9 @@ const btn2 = document.querySelector(".btn2");
 const btn3 = document.querySelector(".btn3");
 const btn4 = document.querySelector(".btn4");
 
+var score = 0;
+var index = 0;
+
 // CONSTS FOR MY QUESTIONS
 
 const myQuestions = [
@@ -28,9 +31,9 @@ const myQuestions = [
     hint:
       "Easy one to start off. At this point, if you've never heard of that game, don't even try to do this quizz, noob. :'D",
     answers: {
-      a: "Matrix",
+      a: "Matris",
       b: "Tetris",
-      c: "Tinder",
+      c: "Reglis",
       d: "Tototris",
     },
     correctAnswer: "Tetris",
@@ -45,7 +48,19 @@ const myQuestions = [
       c: "Evil procrastinator IV",
       d: "Space invaders",
     },
-    correctAnswer: "Space Invaders",
+    correctAnswer: "Space invaders",
+  },
+  {
+    img: "pac-man-nes-002.jpg",
+    hint:
+      "Fun fact, the gameplay and ghosts of this game were inspired by comic book characters. Pretty sure you played it at least one time in your life!",
+    answers: {
+      a: "Poc man",
+      b: "Pec citron man",
+      c: "Pac man",
+      d: "Ghost man",
+    },
+    correctAnswer: "Pac man",
   },
 ];
 
@@ -78,23 +93,23 @@ function btnActive(element) {
 function renderQuestion() {
   // Selection des éléments pour la première question
 
-  img.src = myQuestions[0].img;
-  hint.innerHTML = myQuestions[0].hint;
-  btn1.innerHTML = myQuestions[0].answers.a;
-  btn2.innerHTML = myQuestions[0].answers.b;
-  btn3.innerHTML = myQuestions[0].answers.c;
-  btn4.innerHTML = myQuestions[0].answers.d;
+  img.src = myQuestions[index].img;
+  hint.innerHTML = myQuestions[index].hint;
+  btn1.innerHTML = myQuestions[index].answers.a;
+  btn2.innerHTML = myQuestions[index].answers.b;
+  btn3.innerHTML = myQuestions[index].answers.c;
+  btn4.innerHTML = myQuestions[index].answers.d;
 
   //Si un bouton est actif(cliqué), sa valeur  est donnée à submit,
   //alors linnerhtml de result met un message positif et on peut passer à la prochaine question
 }
 
 function setResults() {
-  var score = 0;
-  var rightAnswer = myQuestions[0].correctAnswer;
+
+  var rightAnswer = myQuestions[index].correctAnswer;
   var chosenAnswer = "";
 
-  answerButton.forEach(function (btn) {
+  answerButton.forEach(function(btn) {
     if (btn.classList.contains("active")) {
       chosenAnswer = btn.innerHTML;
     }
@@ -102,20 +117,21 @@ function setResults() {
   if (chosenAnswer === rightAnswer) {
     score += 1;
     resultContainer.innerHTML = `Score = ${score}`;
+    
   } else { 
     resultContainer.innerHTML = `Score = ${score}`;
   }
+  index +=1;
 }
 
 function nextQuestion() {
-  var count = 0;
 
-  img.src = myQuestions[count + 1].img;
-  hint.innerHTML = myQuestions[count + 1].hint;
-  btn1.innerHTML = myQuestions[count + 1].answers.a;
-  btn2.innerHTML = myQuestions[count + 1].answers.b;
-  btn3.innerHTML = myQuestions[count + 1].answers.c;
-  btn4.innerHTML = myQuestions[count + 1].answers.d;
+  img.src = myQuestions[index].img;
+  hint.innerHTML = myQuestions[index].hint;
+  btn1.innerHTML = myQuestions[index].answers.a;
+  btn2.innerHTML = myQuestions[index].answers.b;
+  btn3.innerHTML = myQuestions[index].answers.c;
+  btn4.innerHTML = myQuestions[index].answers.d;
 }
 
 // LISTENERS STARTING THE GAME

@@ -103,6 +103,11 @@ background-color: greenyellow;
   height: 350px;
 }
 
+#answers .btn-style {
+  padding: 13px;
+  margin: 30px 20px 30px 20px;
+}
+
 
 @-webkit-keyframes scale-out-center {
   0% {
