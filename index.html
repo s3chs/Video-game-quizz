@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>A widget</title>
+    <title>My game</title>
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./index.js"></script>
 </head>
@@ -37,23 +37,25 @@
     </section>
     
     <section id="quizz-section">
+
     <div id="quizz-style">
 
-        <h1>RETRO CULTURE</h1>
-        <img src="./Tetris_NES_play.png" alt="Retro-game-picture">
+        <h1>GUESS THE GAME</h1>
+        <img id="picture" src="./Tetris_NES_play.png" alt="Retro-game-picture">
 
         <article id="hint"> This section will hint the player with some information about the game</article>
 
         <div id="answers">
-            <button class="answers-style">Answer 1</button>
-            <button class="answers-style"> Answer 2</button>
-            <button class="answers-style">Answer 3</button>
-            <button class="answers-style">Answer 4</button>
+            <button class="btn-style btn1">Answer 1</button>
+            <button class="btn-style btn2">Answer 2</button>
+            <button class="btn-style btn3">Answer 3</button>
+            <button class="btn-style btn4">Answer 4</button>
         </div>
-        <button id="submit-button"> Submit</button>
+        <button id="submit"> Submit</button>
     </div>
-    
-        <p id=result> True or False appears when submitting the button</p>
 
+<div id="result">
+        <p id="result-message"></p>
+</div>
     </section>
 </body>

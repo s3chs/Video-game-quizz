@@ -29,8 +29,12 @@ body {
 }
 
 .btn-style {
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 10px;
+}
+
+#answers .btn-style.active {
+background-color: greenyellow;
 }
 
 #introduction {
@@ -83,29 +87,21 @@ body {
   margin: 100px;
 }
 
+
 #answers {
   align-items: center;
   align-content: center;
 }
 
-.answers-style {
-  padding: 10px;
-  border-color: hotpink;
-
-}
 
 #hint {
   text-align: center;
   border-color: greenyellow;
 }
 
-
-
-
-
-
-
-
+#picture {
+  height: 350px;
+}
 
 
 @-webkit-keyframes scale-out-center {
