@@ -20,6 +20,12 @@ const btn2 = document.querySelector(".btn2");
 const btn3 = document.querySelector(".btn3");
 const btn4 = document.querySelector(".btn4");
 
+// CONST FOR THE RESULT SECTION
+const finalResults = document.getElementById("result-page");
+const resultNumber = document.getElementById("result-number");
+const resultText = document.getElementById("result-text");
+//
+
 var score = 0;
 var index = 0;
 
@@ -210,8 +216,9 @@ const myQuestions = [
 
 // FUNCTIONS INTRODUCING THE GAME
 
+finalResults.style.display = "none";
+
 function startGame() {
-  animationSelect.classList.toggle("scale-out-center");
   delayedStory();
 }
 
@@ -236,17 +243,15 @@ function btnActive(element) {
 
 function renderQuestion() {
   // Selection des éléments pour la première question
-
   img.src = myQuestions[index].img;
   hint.innerHTML = myQuestions[index].hint;
   btn1.innerHTML = myQuestions[index].answers.a;
   btn2.innerHTML = myQuestions[index].answers.b;
   btn3.innerHTML = myQuestions[index].answers.c;
   btn4.innerHTML = myQuestions[index].answers.d;
-
-  //Si un bouton est actif(cliqué), sa valeur  est donnée à submit,
-  //alors linnerhtml de result met un message positif et on peut passer à la prochaine question
 }
+
+//Si un bouton est actif(cliqué), sa valeur  est donnée à submit,
 
 function setResults() {
   var rightAnswer = myQuestions[index].correctAnswer;
@@ -263,34 +268,48 @@ function setResults() {
   } else {
     resultContainer.innerHTML = `Score = ${score}`;
   }
-  index += 1;
+  index++;
 }
 
 function nextQuestion() {
-  img.src = myQuestions[index].img;
-  hint.innerHTML = myQuestions[index].hint;
-  btn1.innerHTML = myQuestions[index].answers.a;
-  btn2.innerHTML = myQuestions[index].answers.b;
-  btn3.innerHTML = myQuestions[index].answers.c;
-  btn4.innerHTML = myQuestions[index].answers.d;
+  if (index === myQuestions.length) {
+    displayResultSection();
+  } else {
+    img.src = myQuestions[index].img;
+    hint.innerHTML = myQuestions[index].hint;
+    btn1.innerHTML = myQuestions[index].answers.a;
+    btn2.innerHTML = myQuestions[index].answers.b;
+    btn3.innerHTML = myQuestions[index].answers.c;
+    btn4.innerHTML = myQuestions[index].answers.d;
+  }
 
   let allBtn = document.querySelectorAll(".btn-style");
   allBtn.forEach((btn) => {
-    if (btn.classList.contains("active")){
+    if (btn.classList.contains("active")) {
       btn.classList.toggle("active");
     }
   });
 }
 
-// LISTENERS STARTING THE GAME
+// FUNCTION TO DISPLAY THE FINAL PAGE WITH RESULTS
 
+function displayResultSection() {
+  quizzSection.style.display = "none";
+  finalResults.style.display = "block";
+  resultNumber.innerHTML = `SCORE = ${score}`;
+  if (score <= 5) {
+    resultText.innerHTML =
+      "Okay dude...I see you're not interested in video games :)";
+  } else if (score <= 10) {
+    resultText.innerHTML = "Nice one! You know something about video games ;)";
+  } else { resultText.innerHTML ="Oh...I see you're a man/woman of culture :D"};
+}
+
+// LISTENERS STARTING THE GAME
 btnStart.addEventListener("click", startGame);
 btnGame.addEventListener("click", startQuizz);
 
 //Pas de parenthèses après la fonction autrement elle se lance directement.
-// btnStart.addEventListener("click", () => {
-// animationSelect.classList.toggle("scale-out-center");
-// });
 
 //LISTENERS FOR THE BUTTONS
 
@@ -299,6 +318,7 @@ btn2.addEventListener("click", () => btnActive(btn2));
 btn3.addEventListener("click", () => btnActive(btn3));
 btn4.addEventListener("click", () => btnActive(btn4));
 
-// LISTENER FOR THE SUBMIT BTN (ON SUBMIT, SHOW RESULTS)
+// LISTENER FOR THE SUBMIT BTN (ON SUBMIT, SHOW RESULTS / CHANGE INDEX OF QUESTION OR DISPLAY RESULT SECTION)
 submitButton.addEventListener("click", setResults);
 submitButton.addEventListener("click", nextQuestion);
+// submitButton.addEventListener("click", resultSection);
