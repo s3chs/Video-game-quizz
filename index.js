@@ -219,20 +219,28 @@ const myQuestions = [
 finalResults.style.display = "none";
 
 function startGame() {
+  animationSelect.classList.add("bounce-out-top");
   delayedStory();
 }
 
 function startQuizz() {
+  storyIntroduction.classList.add("bounce-out-top")
   renderQuestion();
-  quizzSection.style.display = "block";
-  storyIntroduction.style.display = "none";
+  delayedQuizz();
+}
+
+function delayedQuizz() {
+  setTimeout(() => {
+    storyIntroduction.style.display = "none";
+    quizzSection.style.display = "block";
+  }, 2000) 
 }
 
 function delayedStory() {
   setTimeout(() => {
     animationSelect.style.display = "none";
     storyIntroduction.style.display = "block";
-  }); // set time out between ",)"
+  }, 2000) 
 }
 
 // FUNCTIONS TO MAKE THE QUIZZ FUNCTIONAL
