@@ -4,6 +4,22 @@ const btnStart = document.querySelector("button.btn-style");
 const animationSelect = document.getElementById("main");
 const storyIntroduction = document.getElementById("introduction");
 const btnGame = document.querySelector("button.startGame");
+var typeWriting = document.getElementById("centered-element");
+
+// TYPEWRITING EFFECT
+
+var i = 0;
+var txt = 'Since its boom in the 70s, the video game industry has been continously shaping and playing a major role in defining its own culture. Video games, in a sense, is like art, it can be a way for gaming developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. This little test will be an opportunity to test your video game knowledge.'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    typeWriting.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
 
 // CONSTS FOR THE QUIZZ SECTION
 const guessTitle = document.getElementById("guess-title");
@@ -25,16 +41,21 @@ const btn4 = document.querySelector(".btn4");
 const finalResults = document.getElementById("result-page");
 const resultNumber = document.getElementById("result-number");
 const resultText = document.getElementById("result-text");
+const printResults= document.getElementById("printAnswers");
 //
 
 var score = 0;
 var index = 0;
 
+let scoreTable = {
+scoreContainer: [{chosen:"",correct:""}],
+}
+
 // CONST / QUESTIONS
 
 const myQuestions = [
   {
-    img: "Tetris_NES_play.png",
+    img: "./Tetris_NES_play.png",
     hint:
       "Easy one to start off. At this point, if you've never heard of that game, don't even try to do this quizz, noob. :'D",
     answers: {
@@ -45,32 +66,32 @@ const myQuestions = [
     },
     correctAnswer: "Tetris",
   },
+  {
+    img: "./Space-invaders.jpg",
+    hint:
+      "A true classic, this game made by Tomohiro Nishikado gave birth to video games competitions. You better know this one!",
+    answers: {
+      a: "Galactic crusader",
+      b: "Space intruder",
+      c: "Evil procrastinator IV",
+      d: "Space invaders",
+    },
+    correctAnswer: "Space invaders",
+  },
+  {
+    img: "./pac-man-nes-002.jpg",
+    hint:
+      "This video game was a huge hit amongst women. Fun fact, the gameplay and ghosts of this game were inspired by comic book characters. Pretty sure you played it at least one time in your life!",
+    answers: {
+      a: "Poc-man",
+      b: "Pec-citron-man",
+      c: "Pac-man",
+      d: "Ghost-man",
+    },
+    correctAnswer: "Pac man",
+  },
   // {
-  //   img: "Space-invaders.jpg",
-  //   hint:
-  //     "A true classic, this game made by Tomohiro Nishikado gave birth to video games competitions. You better know this one!",
-  //   answers: {
-  //     a: "Galactic crusader",
-  //     b: "Space intruder",
-  //     c: "Evil procrastinator IV",
-  //     d: "Space invaders",
-  //   },
-  //   correctAnswer: "Space invaders",
-  // },
-  // {
-  //   img: "pac-man-nes-002.jpg",
-  //   hint:
-  //     "This video game was a huge hit amongst women. Fun fact, the gameplay and ghosts of this game were inspired by comic book characters. Pretty sure you played it at least one time in your life!",
-  //   answers: {
-  //     a: "Poc man",
-  //     b: "Pec citron man",
-  //     c: "Pac man",
-  //     d: "Ghost man",
-  //   },
-  //   correctAnswer: "Pac man",
-  // },
-  // {
-  //   img: "a link to the past.jpg",
+  //   img: "./a link to the past.jpg",
   //   hint:
   //     "One of the most popular Nintendo franchise. People often mistake the name of the hero with the name of the game. Dude, don't make that mistake.",
   //   answers: {
@@ -82,7 +103,7 @@ const myQuestions = [
   //   correctAnswer: "The legend of Zelda",
   // },
   // {
-  //   img: "Megaman2-5.png",
+  //   img: "./Megaman2-5.png",
   //   hint:
   //     "Good old Capcom, these games difficulty were seriously hard at the time. The hero, a blue boy with a cannon at the end of his arm is still iconic!",
   //   answers: {
@@ -94,7 +115,7 @@ const myQuestions = [
   //   correctAnswer: "Megaman",
   // },
   // {
-  //   img: "Metroid.png",
+  //   img: "./Metroid.png",
   //   hint:
   //     "An other popular Nintendo franchise. The hero, a famous space hunter called Samus is always confronted against aliens.",
   //   answers: {
@@ -106,7 +127,7 @@ const myQuestions = [
   //   correctAnswer: "Metroid",
   // },
   // {
-  //   img: "Prince_of_Persia_1_-_MS-DOS_-_Mod_(1).png",
+  //   img: "./Prince_of_Persia_1_-_MS-DOS_-_Mod_(1).png",
   //   hint:
   //     "This game gave some serious nosebleeds. You had to finish the game in a given time, and the whole game was a huge labyrinth. The good old days where you needed to have a paper and pencil to note everything in order to beat the game.",
   //   answers: {
@@ -118,7 +139,7 @@ const myQuestions = [
   //   correctAnswer: "Prince of Persia",
   // },
   // {
-  //   img: "Final-Fantasy-VI-Screenshot-1.png",
+  //   img: "./Final-Fantasy-VI-Screenshot-1.png",
   //   hint:
   //     "It's getting harder... One of the biggest RPG franchise out there, famous for its mesmerizing universes.",
   //   answers: {
@@ -130,7 +151,7 @@ const myQuestions = [
   //   correctAnswer: "Final Fantasy",
   // },
   // {
-  //   img: "Metal_Slug.png",
+  //   img: "./Metal_Slug.png",
   //   hint:
   //     "Do you even arcade? This game was a masterpiece to play with your friends. If you wanted to beat one of these games, you should have spent a loooooot of money! Do you miss the games of Neogeo ? I do :'(",
   //   answers: {
@@ -142,7 +163,7 @@ const myQuestions = [
   //   correctAnswer: "Metal Slug",
   // },
   // {
-  //   img: "Chrono-trigger.jpg",
+  //   img: "/Chrono-trigger.jpg",
   //   hint:
   //     "Some might consider it as one of the best RPG of all time...The drawings of the game were made by Dragon Ball's creator. Ouch.. I told you it was getting harder! ",
   //   answers: {
@@ -154,7 +175,7 @@ const myQuestions = [
   //   correctAnswer: "Chrono Trigger",
   // },
   // {
-  //   img: "KOF.jpg",
+  //   img: "./KOF.jpg",
   //   hint:
   //     "Back at it with the Neogeo games, a true fighting classic. SNK at its finest.",
   //   answers: {
@@ -166,7 +187,7 @@ const myQuestions = [
   //   correctAnswer: "King of Fighters",
   // },
   // {
-  //   img: "Oddworld.jpg",
+  //   img: "./Oddworld.jpg",
   //   hint:
   //     "Playstation 1 was a hit. This game was one of the best this gaming console had the chance to know. Sweet old Abe.",
   //   answers: {
@@ -178,7 +199,7 @@ const myQuestions = [
   //   correctAnswer: "Oddworld",
   // },
   // {
-  //   img: "half-life-crowbar.jpg",
+  //   img: "./half-life-crowbar.jpg",
   //   hint:
   //     "A game changer in the FPS industry. Did you know that this game is the reason why Counter Strike exists? That crowbar tho <3",
   //   answers: {
@@ -190,7 +211,7 @@ const myQuestions = [
   //   correctAnswer: "Half Life",
   // },
   // {
-  //   img: "Gouls.jpg",
+  //   img: "./Gouls.jpg",
   //   hint:
   //     "Rare are those who finished it. By the end of the first level, you would nosebleed like hell. Come on, beat it, I dare you.",
   //   answers: {
@@ -202,7 +223,7 @@ const myQuestions = [
   //   correctAnswer: "Ghouls'N Ghosts",
   // },
   // {
-  //   img: "Another.jpg",
+  //   img: "./Another.jpg",
   //   hint:
   //     "Last but not least, time for the final boss. This Super Nintendo game was made by a single french guy... in his garage. A true masterpiece, considered as one of the best action/platform game ever made. By the way, it's one of my favourite game <3",
   //   answers: {
@@ -216,8 +237,6 @@ const myQuestions = [
 ];
 
 // FUNCTIONS INTRODUCING THE GAME
-
-finalResults.style.display = "none";
 
 function startGame() {
   // animationSelect.classList.add("bounce-out-top");
@@ -234,10 +253,12 @@ function delayedQuizz() {
   // setTimeout(() => {
     storyIntroduction.style.display = "none";
     quizzSection.style.display = "block";
+    
   // }, 2000) 
 }
 
 function delayedStory() {
+  typeWriter();
   // setTimeout(() => {
     animationSelect.style.display = "none";
     storyIntroduction.style.display = "block";
@@ -288,9 +309,15 @@ function setResults() {
     resultContainer.innerHTML = `Score = ${score}`;
   }
   index++;
+
+let printChoice = {chosen:chosenAnswer, correct:rightAnswer};
+scoreTable.scoreContainer.push(printChoice);
+
 }
 
 //Les élements à transmettre quand on passe d'une question à une autre
+
+finalResults.style.display = "none"; // La partie des résultats hidden dès le début
 
 function nextQuestion() {
   if (index === myQuestions.length) {
@@ -315,16 +342,33 @@ function nextQuestion() {
 // FUNCTION TO DISPLAY THE FINAL PAGE WITH RESULTS
 
 function displayResultSection() {
+
+  printtheResults();
+
   quizzSection.style.display = "none";
   finalResults.style.display = "block";
   resultNumber.innerHTML = `SCORE = ${score}`;
+
   if (score <= 5) {
     resultText.innerHTML =
-      "Okay dude...I see you're not interested in video games :)";
+      "Okay dude...you're definitely not interested in video games :)";
   } else if (score <= 10) {
-    resultText.innerHTML = "Nice one! You know something about video games ;)";
+    resultText.innerHTML = "Nice one! I guess you know some stuff about video games ;)";
   } else { resultText.innerHTML ="Oh...I see you're a man/woman of culture :D"};
 }
+
+function printtheResults(){
+
+  for (index = 1 ; index < scoreTable.scoreContainer.length ; index ++) {
+    let choices = scoreTable.scoreContainer[index].chosen ;
+    let correctChoice = scoreTable.scoreContainer[index].correct ;
+    var li = document.createElement("li");
+    li.innerHTML = `Your move : ${choices}  | The right move : ${correctChoice}`
+    printResults.appendChild(li);
+  
+  }
+}
+
 
 // LISTENERS STARTING THE GAME
 btnStart.addEventListener("click", startGame);

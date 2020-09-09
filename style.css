@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 h1 {
   font-size: 2em;
   margin-bottom: 30px;
@@ -41,16 +46,15 @@ background-color: greenyellow;
 
 #introduction {
   display: none;
-
 }
 
 #quizz-section {
   display: none;
 }
 
-.centered-element {
+#centered-element {
   height: 800px;
-  margin: 0 200px 0 200px;
+  margin: 50px 200px 0px 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,6 +158,11 @@ border-color: whitesmoke;
 
 #result-text {
 margin-top: 40px;
+font-size:  20px;
+}
+
+#flash-title {
+  margin: 40px;
 }
 
 #refresh {
