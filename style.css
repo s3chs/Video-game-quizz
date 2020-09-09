@@ -48,12 +48,19 @@ background-color: greenyellow;
   display: none;
 }
 
+.align-intro {
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
 #quizz-section {
   display: none;
 }
 
 #centered-element {
-  height: 800px;
+  height: 600px;
   margin: 50px 200px 0px 200px;
   display: flex;
   flex-direction: column;
@@ -64,8 +71,7 @@ background-color: greenyellow;
 }
 
 .startGame {
-  margin-top: 50px;
-  padding: 10px;
+  padding: 15px;
 }
 
 .scale-out-center {
@@ -81,7 +87,7 @@ background-color: greenyellow;
 
 #quizz-section {
   height: 600px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #quizz-style {

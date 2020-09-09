@@ -6,21 +6,6 @@ const storyIntroduction = document.getElementById("introduction");
 const btnGame = document.querySelector("button.startGame");
 var typeWriting = document.getElementById("centered-element");
 
-// TYPEWRITING EFFECT
-
-var i = 0;
-var txt = 'Since its boom in the 70s, the video game industry has been continously shaping and playing a major role in defining its own culture. Video games, in a sense, is like art, it can be a way for gaming developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. This little test will be an opportunity to test your video game knowledge.'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
-
-function typeWriter() {
-  if (i < txt.length) {
-    typeWriting.innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-
 // CONSTS FOR THE QUIZZ SECTION
 const guessTitle = document.getElementById("guess-title");
 const quizzSection = document.getElementById("quizz-section");
@@ -41,15 +26,15 @@ const btn4 = document.querySelector(".btn4");
 const finalResults = document.getElementById("result-page");
 const resultNumber = document.getElementById("result-number");
 const resultText = document.getElementById("result-text");
-const printResults= document.getElementById("printAnswers");
+const printResults = document.getElementById("printAnswers");
 //
 
 var score = 0;
 var index = 0;
 
 let scoreTable = {
-scoreContainer: [{chosen:"",correct:""}],
-}
+  scoreContainer: [{ chosen: "", correct: "" }],
+};
 
 // CONST / QUESTIONS
 
@@ -88,7 +73,7 @@ const myQuestions = [
       c: "Pac-man",
       d: "Ghost-man",
     },
-    correctAnswer: "Pac man",
+    correctAnswer: "Pac-man",
   },
   // {
   //   img: "./a link to the past.jpg",
@@ -236,6 +221,21 @@ const myQuestions = [
   // },
 ];
 
+// TYPEWRITING EFFECT
+
+var i = 0;
+var txt =
+  "Since its boom in the 70s, the video game industry has been continously shaping and playing a major role in defining its own culture. Video games, in a sense, is like art, it can be a way for gaming developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. This little test will be an opportunity to test your video game knowledge. Get ready to ruuuuuuuummmmmblllleeeeee!"; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    typeWriting.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
 // FUNCTIONS INTRODUCING THE GAME
 
 function startGame() {
@@ -249,20 +249,43 @@ function startQuizz() {
   delayedQuizz();
 }
 
+// FUNCTIONS TO SET THE TIMER
+
+function launchChrono() {
+  var setTimer = 30;
+
+  const countdown = setInterval(function () {
+    setTimer -= 1;
+    document.getElementById("theTimer").innerHTML = setTimer;
+    if (setTimer == 20) {
+      stopTimer(countdown);
+      setResults();
+      nextQuestion();
+    }
+  }, 1000);
+}
+
+function stopTimer(countdown) {
+  clearInterval(countdown);
+  launchChrono();
+}
+
+/////
+
 function delayedQuizz() {
   // setTimeout(() => {
-    storyIntroduction.style.display = "none";
-    quizzSection.style.display = "block";
-    
-  // }, 2000) 
+  storyIntroduction.style.display = "none";
+  quizzSection.style.display = "block";
+
+  // }, 2000)
 }
 
 function delayedStory() {
   typeWriter();
   // setTimeout(() => {
-    animationSelect.style.display = "none";
-    storyIntroduction.style.display = "block";
-  // }, 2000) 
+  animationSelect.style.display = "none";
+  storyIntroduction.style.display = "block";
+  // }, 2000)
 }
 
 // FUNCTIONS TO MAKE THE QUIZZ FUNCTIONAL
@@ -272,7 +295,7 @@ function changeTextColor() {
 }
 
 function generateRandomColor() {
-  return '#'+Math.floor(Math.random()*16777215).toString(16);
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
 }
 
 setInterval(changeTextColor, 200);
@@ -310,9 +333,8 @@ function setResults() {
   }
   index++;
 
-let printChoice = {chosen:chosenAnswer, correct:rightAnswer};
-scoreTable.scoreContainer.push(printChoice);
-
+  let printChoice = { chosen: chosenAnswer, correct: rightAnswer };
+  scoreTable.scoreContainer.push(printChoice);
 }
 
 //Les élements à transmettre quand on passe d'une question à une autre
@@ -342,7 +364,6 @@ function nextQuestion() {
 // FUNCTION TO DISPLAY THE FINAL PAGE WITH RESULTS
 
 function displayResultSection() {
-
   printtheResults();
 
   quizzSection.style.display = "none";
@@ -353,26 +374,28 @@ function displayResultSection() {
     resultText.innerHTML =
       "Okay dude...you're definitely not interested in video games :)";
   } else if (score <= 10) {
-    resultText.innerHTML = "Nice one! I guess you know some stuff about video games ;)";
-  } else { resultText.innerHTML ="Oh...I see you're a man/woman of culture :D"};
-}
-
-function printtheResults(){
-
-  for (index = 1 ; index < scoreTable.scoreContainer.length ; index ++) {
-    let choices = scoreTable.scoreContainer[index].chosen ;
-    let correctChoice = scoreTable.scoreContainer[index].correct ;
-    var li = document.createElement("li");
-    li.innerHTML = `Your move : ${choices}  | The right move : ${correctChoice}`
-    printResults.appendChild(li);
-  
+    resultText.innerHTML =
+      "Nice one! I guess you know some stuff about video games ;)";
+  } else {
+    resultText.innerHTML = "Oh...I see you're a man/woman of culture :D";
   }
 }
 
+function printtheResults() {
+  for (index = 1; index < scoreTable.scoreContainer.length; index++) {
+    let choices = scoreTable.scoreContainer[index].chosen;
+    let correctChoice = scoreTable.scoreContainer[index].correct;
+    var li = document.createElement("li");
+    li.innerHTML = `Your move : ${choices}  | The right move : ${correctChoice}`;
+    printResults.appendChild(li);
+  }
+}
 
 // LISTENERS STARTING THE GAME
+
 btnStart.addEventListener("click", startGame);
 btnGame.addEventListener("click", startQuizz);
+btnGame.addEventListener("click", launchChrono);
 
 //Pas de parenthèses après la fonction autrement elle se lance directement.
 
@@ -384,6 +407,15 @@ btn3.addEventListener("click", () => btnActive(btn3));
 btn4.addEventListener("click", () => btnActive(btn4));
 
 // LISTENER FOR THE SUBMIT BTN (ON SUBMIT, SHOW RESULTS / CHANGE INDEX OF QUESTION OR DISPLAY RESULT SECTION)
+
 submitButton.addEventListener("click", setResults);
 submitButton.addEventListener("click", nextQuestion);
+submitButton.addEventListener("click", launchChrono);
+submitButton.addEventListener("click", stopTimer(countdown));
+
 // submitButton.addEventListener("click", resultSection);
+// function handleSubmitButton() {
+//   setResults()
+//   nextQuestion()
+//   launchChrono()
+// }
