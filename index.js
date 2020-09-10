@@ -225,7 +225,7 @@ const myQuestions = [
 
 var i = 0;
 var txt =
-  "Since its boom in the 70s, the video game industry has been continously shaping and playing a major role in defining its own culture. Video games, in a sense, is like art, it can be a way for gaming developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. This little test will be an opportunity to test your video game knowledge. Get ready to ruuuuuuuummmmmblllleeeeee!"; /* The text */
+  "Since its boom in the 70s, the video game industry has been continously shaping and creating a worldwide culture. Video games, in a sense, is like art, it can be a way for game developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. In this game, you will have to guess the title of the game you will see. Get ready to ruuuuuuuummmmmblllleeeeee! :D"; /* The text */
 var speed = 50; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {

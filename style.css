@@ -98,11 +98,19 @@ background-color: greenyellow;
   align-content: center;
   line-height: 40px;
   margin: 50px 100px 20px 100px;
+  
+}
+
+.background {
+  background-image: url("./stars.gif");
+  background-repeat:repeat-x
+  
 }
 
 #mario {
   height: 50px;
   margin-bottom: 10px;
+  padding-right: 10px;
 }
 
 .timeScore {
@@ -112,7 +120,7 @@ background-color: greenyellow;
     justify-content: space-around;
     align-items: center;
     align-content: stretch;
-  width: 550px;
+  width: 540px;
 }
 
 #cloud-one {
