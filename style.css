@@ -97,7 +97,7 @@ background-color: greenyellow;
   align-items: center;
   align-content: center;
   line-height: 40px;
-  margin: 100px;
+  margin: 50px 100px 20px 100px;
 }
 
 #cloud-one {
@@ -135,7 +135,7 @@ background-color: greenyellow;
 #submit {
   margin-top: 30px;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 #picture {
@@ -173,7 +173,12 @@ border-color: whitesmoke;
 }
 
 #result-page {
-  margin-top: 200px;
+  margin-top: 100px;
+}
+
+#result-page img {
+  height: 250px;
+  margin-top: 30px;
 }
 
 #result-text {
