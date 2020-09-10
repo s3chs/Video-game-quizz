@@ -110,7 +110,8 @@ background-color: greenyellow;
 #mario {
   height: 50px;
   margin-bottom: 10px;
-  padding-right: 10px;
+  padding-right: 20px;
+  background-color: black;
 }
 
 .timeScore {
