@@ -100,6 +100,20 @@ background-color: greenyellow;
   margin: 100px;
 }
 
+#cloud-one {
+  width: 90px;
+  position: absolute;
+  top: 350px;
+  left: 300px;
+}
+
+#cloud-two {
+  width: 90px;
+  position: absolute;
+  top: 350px;
+  right: 300px;
+}
+
 #quizz-style h1 {
   border-bottom: yellow;
 }

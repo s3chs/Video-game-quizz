@@ -63,150 +63,150 @@ const myQuestions = [
     },
     correctAnswer: "Space invaders",
   },
-  {
-    img: "./pac-man-nes-002.jpg",
-    hint:
-      "This video game was a huge hit amongst women. Fun fact, the gameplay and ghosts of this game were inspired by comic book characters. Pretty sure you played it at least one time in your life!",
-    answers: {
-      a: "Poc-man",
-      b: "Pec-citron-man",
-      c: "Pac-man",
-      d: "Ghost-man",
-    },
-    correctAnswer: "Pac-man",
-  },
-  {
-    img: "./a link to the past.jpg",
-    hint:
-      "One of the most popular Nintendo franchise. People often mistake the name of the hero with the name of the game. Dude, don't make that mistake.",
-    answers: {
-      a: "The legend of Zelda",
-      b: "The legend of Foo",
-      c: "Zelda quest",
-      d: "The legend of Link",
-    },
-    correctAnswer: "The legend of Zelda",
-  },
-  {
-    img: "./Megaman2-5.png",
-    hint:
-      "Good old Capcom, these games difficulty were seriously hard at the time. The hero, a blue boy with a cannon at the end of his arm is still iconic!",
-    answers: {
-      a: "Ultraman",
-      b: "Gigaman",
-      c: "Megaman",
-      d: "Bazman",
-    },
-    correctAnswer: "Megaman",
-  },
-  {
-    img: "./Metroid.png",
-    hint:
-      "An other popular Nintendo franchise. The hero, a famous space hunter called Samus is always confronted against aliens.",
-    answers: {
-      a: "Samus",
-      b: "Metroid",
-      c: "Space Metroid",
-      d: "Galactic hunt",
-    },
-    correctAnswer: "Metroid",
-  },
-  {
-    img: "./Prince_of_Persia_1_-_MS-DOS_-_Mod_(1).png",
-    hint:
-      "This game gave some serious nosebleeds. You had to finish the game in a given time, and the whole game was a huge labyrinth. The good old days where you needed to have a paper and pencil to note everything in order to beat the game.",
-    answers: {
-      a: "Persian prince",
-      b: "Prince of Persia",
-      c: "Sands of time",
-      d: "Prince of sands",
-    },
-    correctAnswer: "Prince of Persia",
-  },
-  {
-    img: "./Final-Fantasy-VI-Screenshot-1.png",
-    hint:
-      "It's getting harder... One of the biggest RPG franchise out there, famous for its mesmerizing universes.",
-    answers: {
-      a: "Pokemon",
-      b: "Dragon Quest",
-      c: "Final Fantasy",
-      d: "Fantasy Star",
-    },
-    correctAnswer: "Final Fantasy",
-  },
-  {
-    img: "./Metal_Slug.png",
-    hint:
-      "Do you even arcade? This game was a masterpiece to play with your friends. If you wanted to beat one of these games, you should have spent a loooooot of money! Do you miss the games of Neogeo ? I do :'(",
-    answers: {
-      a: "Tank Slug",
-      b: "War Slug",
-      c: "Warrior Slug",
-      d: "Metal Slug",
-    },
-    correctAnswer: "Metal Slug",
-  },
-  {
-    img: "/Chrono-trigger.jpg",
-    hint:
-      "Some might consider it as one of the best RPG of all time...The drawings of the game were made by Dragon Ball's creator. Ouch.. I told you it was getting harder! ",
-    answers: {
-      a: "Chrono Trigger",
-      b: "Dragon Quest",
-      c: "Pokemon",
-      d: "Final Fantasy",
-    },
-    correctAnswer: "Chrono Trigger",
-  },
-  {
-    img: "./KOF.jpg",
-    hint:
-      "Back at it with the Neogeo games, a true fighting classic. SNK at its finest.",
-    answers: {
-      a: "King of Fighters",
-      b: "Street Fighter",
-      c: "King of the Streets",
-      d: "Streets of rage",
-    },
-    correctAnswer: "King of Fighters",
-  },
-  {
-    img: "./Oddworld.jpg",
-    hint:
-      "Playstation 1 was a hit. This game was one of the best this gaming console had the chance to know. Sweet old Abe.",
-    answers: {
-      a: "Abe's Quest",
-      b: "Abe's Escape",
-      c: "Abe's Adventure",
-      d: "Oddworld",
-    },
-    correctAnswer: "Oddworld",
-  },
-  {
-    img: "./half-life-crowbar.jpg",
-    hint:
-      "A game changer in the FPS industry. Did you know that this game is the reason why Counter Strike exists? That crowbar tho <3",
-    answers: {
-      a: "Doom",
-      b: "Quake",
-      c: "Half Life",
-      d: "Quake",
-    },
-    correctAnswer: "Half Life",
-  },
-  {
-    img: "./Gouls.jpg",
-    hint:
-      "Rare are those who finished it. By the end of the first level, you would nosebleed like hell. Come on, beat it, I dare you.",
-    answers: {
-      a: "Ghosts'N Ghouls",
-      b: "Ghouls'N Ghosts",
-      c: "Knights and Ghouls",
-      d: "Knights and Ghosts",
-    },
-    correctAnswer: "Ghouls'N Ghosts",
-  },
+  // {
+  //   img: "./pac-man-nes-002.jpg",
+  //   hint:
+  //     "This video game was a huge hit amongst women. Fun fact, the gameplay and ghosts of this game were inspired by comic book characters. Pretty sure you played it at least one time in your life!",
+  //   answers: {
+  //     a: "Poc-man",
+  //     b: "Pec-citron-man",
+  //     c: "Pac-man",
+  //     d: "Ghost-man",
+  //   },
+  //   correctAnswer: "Pac-man",
+  // },
+  // {
+  //   img: "./a link to the past.jpg",
+  //   hint:
+  //     "One of the most popular Nintendo franchise. People often mistake the name of the hero with the name of the game. Dude, don't make that mistake.",
+  //   answers: {
+  //     a: "The legend of Zelda",
+  //     b: "The legend of Foo",
+  //     c: "Zelda quest",
+  //     d: "The legend of Link",
+  //   },
+  //   correctAnswer: "The legend of Zelda",
+  // },
+  // {
+  //   img: "./Megaman2-5.png",
+  //   hint:
+  //     "Good old Capcom, these games difficulty were seriously hard at the time. The hero, a blue boy with a cannon at the end of his arm is still iconic!",
+  //   answers: {
+  //     a: "Ultraman",
+  //     b: "Gigaman",
+  //     c: "Megaman",
+  //     d: "Bazman",
+  //   },
+  //   correctAnswer: "Megaman",
+  // },
+  // {
+  //   img: "./Metroid.png",
+  //   hint:
+  //     "An other popular Nintendo franchise. The hero, a famous space hunter called Samus is always confronted against aliens.",
+  //   answers: {
+  //     a: "Samus",
+  //     b: "Metroid",
+  //     c: "Space Metroid",
+  //     d: "Galactic hunt",
+  //   },
+  //   correctAnswer: "Metroid",
+  // },
+  // {
+  //   img: "./Prince_of_Persia_1_-_MS-DOS_-_Mod_(1).png",
+  //   hint:
+  //     "This game gave some serious nosebleeds. You had to finish the game in a given time, and the whole game was a huge labyrinth. The good old days where you needed to have a paper and pencil to note everything in order to beat the game.",
+  //   answers: {
+  //     a: "Persian prince",
+  //     b: "Prince of Persia",
+  //     c: "Sands of time",
+  //     d: "Prince of sands",
+  //   },
+  //   correctAnswer: "Prince of Persia",
+  // },
+  // {
+  //   img: "./Final-Fantasy-VI-Screenshot-1.png",
+  //   hint:
+  //     "It's getting harder... One of the biggest RPG franchise out there, famous for its mesmerizing universes.",
+  //   answers: {
+  //     a: "Pokemon",
+  //     b: "Dragon Quest",
+  //     c: "Final Fantasy",
+  //     d: "Fantasy Star",
+  //   },
+  //   correctAnswer: "Final Fantasy",
+  // },
+  // {
+  //   img: "./Metal_Slug.png",
+  //   hint:
+  //     "Do you even arcade? This game was a masterpiece to play with your friends. If you wanted to beat one of these games, you should have spent a loooooot of money! Do you miss the games of Neogeo ? I do :'(",
+  //   answers: {
+  //     a: "Tank Slug",
+  //     b: "War Slug",
+  //     c: "Warrior Slug",
+  //     d: "Metal Slug",
+  //   },
+  //   correctAnswer: "Metal Slug",
+  // },
+  // {
+  //   img: "/Chrono-trigger.jpg",
+  //   hint:
+  //     "Some might consider it as one of the best RPG of all time...The drawings of the game were made by Dragon Ball's creator. Ouch.. I told you it was getting harder! ",
+  //   answers: {
+  //     a: "Chrono Trigger",
+  //     b: "Dragon Quest",
+  //     c: "Pokemon",
+  //     d: "Final Fantasy",
+  //   },
+  //   correctAnswer: "Chrono Trigger",
+  // },
+  // {
+  //   img: "./KOF.jpg",
+  //   hint:
+  //     "Back at it with the Neogeo games, a true fighting classic. SNK at its finest.",
+  //   answers: {
+  //     a: "King of Fighters",
+  //     b: "Street Fighter",
+  //     c: "King of the Streets",
+  //     d: "Streets of rage",
+  //   },
+  //   correctAnswer: "King of Fighters",
+  // },
+  // {
+  //   img: "./Oddworld.jpg",
+  //   hint:
+  //     "Playstation 1 was a hit. This game was one of the best this gaming console had the chance to know. Sweet old Abe.",
+  //   answers: {
+  //     a: "Abe's Quest",
+  //     b: "Abe's Escape",
+  //     c: "Abe's Adventure",
+  //     d: "Oddworld",
+  //   },
+  //   correctAnswer: "Oddworld",
+  // },
+  // {
+  //   img: "./half-life-crowbar.jpg",
+  //   hint:
+  //     "A game changer in the FPS industry. Did you know that this game is the reason why Counter Strike exists? That crowbar tho <3",
+  //   answers: {
+  //     a: "Doom",
+  //     b: "Quake",
+  //     c: "Half Life",
+  //     d: "Quake",
+  //   },
+  //   correctAnswer: "Half Life",
+  // },
+  // {
+  //   img: "./Gouls.jpg",
+  //   hint:
+  //     "Rare are those who finished it. By the end of the first level, you would nosebleed like hell. Come on, beat it, I dare you.",
+  //   answers: {
+  //     a: "Ghosts'N Ghouls",
+  //     b: "Ghouls'N Ghosts",
+  //     c: "Knights and Ghouls",
+  //     d: "Knights and Ghosts",
+  //   },
+  //   correctAnswer: "Ghouls'N Ghosts",
+  // },
   {
     img: "./Another.jpg",
     hint:
@@ -239,7 +239,7 @@ function typeWriter() {
 // FUNCTIONS INTRODUCING THE GAME
 
 function startGame() {
-  animationSelect.classList.add("bounce-out-top");
+  // animationSelect.classList.add("bounce-out-top");
   delayedStory();
 }
 
@@ -258,7 +258,7 @@ function launchChrono() {
 
   countdownIntervalID = setInterval(function () {
     setTimer -= 1;
-    document.getElementById("theTimer").innerHTML = setTimer;
+    document.getElementById("theTimer").innerHTML ="Time:" + setTimer;
     if (setTimer == 0) {
       stopTimer();
       setResults();
@@ -278,19 +278,18 @@ function stopTimer(clbk) {
 /////
 
 function delayedQuizz() {
-  setTimeout(() => {
+  // setTimeout(() => {
   storyIntroduction.style.display = "none";
   quizzSection.style.display = "block";
-
-  },2000)
+  // },2000)
 }
 
 function delayedStory() {
-  typeWriter();
   // setTimeout(() => {
   animationSelect.style.display = "none";
   storyIntroduction.style.display = "block";
-  // },1000)
+  typeWriter();
+  // },2000)
 }
 
 // FUNCTIONS TO MAKE THE QUIZZ FUNCTIONAL
@@ -307,6 +306,25 @@ setInterval(changeTextColor, 200);
 
 function btnActive(element) {
   element.classList.toggle("active");
+  answerButton.forEach(function (btn) {
+    if (btn1.classList.contains("active")) {
+      btn2.classList.remove("active")
+      btn3.classList.remove("active")
+      btn4.classList.remove("active")
+    } else if (btn2.classList.contains("active")) {
+      btn1.classList.remove("active")
+      btn3.classList.remove("active")
+      btn4.classList.remove("active")
+    } else if (btn3.classList.contains("active")) {
+      btn1.classList.remove("active")
+      btn2.classList.remove("active")
+      btn4.classList.remove("active")
+    } else if (btn4.classList.contains("active")) {
+      btn1.classList.remove("active")
+      btn2.classList.remove("active")
+      btn3.classList.remove("active")
+    }
+  });
 }
 
 function renderQuestion() {
@@ -324,10 +342,13 @@ function renderQuestion() {
 function setResults() {
   var rightAnswer = myQuestions[index].correctAnswer;
   var chosenAnswer = "";
+  var noMove = `no move :(`;
 
   answerButton.forEach(function (btn) {
     if (btn.classList.contains("active")) {
       chosenAnswer = btn.innerHTML;
+    } else {
+      chosenAnswer = noMove;
     }
   });
   if (chosenAnswer === rightAnswer) {
@@ -423,7 +444,7 @@ submitButton.addEventListener("click", () => {
     setResults();
     nextQuestion();
     launchChrono();
-  })
+  });
 });
 
 // submitButton.addEventListener("click", resultSection);
