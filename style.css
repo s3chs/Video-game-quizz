@@ -103,7 +103,7 @@ background-color: greenyellow;
 
 .background {
   background-image: url("./stars.gif");
-  background-repeat:repeat-x
+  background-repeat:repeat-x;
   
 }
 
@@ -167,6 +167,7 @@ width: 470px;
 padding: 30px;
 border-style: groove;
 border-color: whitesmoke;
+background-color: black;
 }
 
 #guess-title {
