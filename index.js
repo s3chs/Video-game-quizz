@@ -258,7 +258,7 @@ function launchChrono() {
 
   countdownIntervalID = setInterval(function () {
     setTimer -= 1;
-    document.getElementById("theTimer").innerHTML ="Time:" + setTimer;
+    document.getElementById("theTimer").innerHTML ="Time: " + setTimer;
     if (setTimer == 0) {
       stopTimer();
       setResults();
@@ -352,7 +352,7 @@ function setResults() {
     } else if (i === 3 && nbBtnActive === 0) {
       chosenAnswer = noMove;
     }
-      
+    
   });
   if (chosenAnswer === rightAnswer) {
     score += 1;

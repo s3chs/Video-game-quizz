@@ -100,6 +100,21 @@ background-color: greenyellow;
   margin: 50px 100px 20px 100px;
 }
 
+#mario {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.timeScore {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+  width: 550px;
+}
+
 #cloud-one {
   width: 90px;
   position: absolute;
