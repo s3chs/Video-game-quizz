@@ -148,7 +148,7 @@ const myQuestions = [
     correctAnswer: "Metal Slug",
   },
   {
-    img: "./Chrono-trigger.jpg",
+    img: "/Chrono-trigger.jpg",
     hint:
       "Some might consider it as one of the best RPG of all time...The drawings of the game were made by Dragon Ball's creator. Ouch.. I told you it was getting harder! ",
     answers: {
@@ -191,7 +191,7 @@ const myQuestions = [
       a: "Doom",
       b: "Quake",
       c: "Half Life",
-      d: "Quake",
+      d: "Unreal",
     },
     correctAnswer: "Half Life",
   },
@@ -210,7 +210,7 @@ const myQuestions = [
   {
     img: "./Another.jpg",
     hint:
-      "Last but not least, time for the final boss. This Super Nintendo game was made by a single french guy... in his garage. A true masterpiece, considered as one of the best action/platform game ever made. By the way, it's one of my favourite game <3",
+      "This Super Nintendo game was made by a french guy named Eric Chahi... in his garage. A true masterpiece, considered as one of the best action/platform game ever made. By the way, it's one of my favourite game <3",
     answers: {
       a: "Outter World",
       b: "Out of this World",
@@ -219,13 +219,132 @@ const myQuestions = [
     },
     correctAnswer: "Another World",
   },
+  {
+    img: "./Heart of darkness.jpg",
+    hint:
+      "An other amazing game by the french genius Eric Chahi, this one was released on the first Playstation. The last level of this game is REALLY hard... I doubt you can finish it without at least 10 tries.",
+    answers: {
+      a: "Heart of Darkness",
+      b: "Earth of Darkness",
+      c: "Dark Earth",
+      d: "Dark Heart",
+    },
+    correctAnswer: "Heart of Darkness",
+  },
+  {
+    img: "./Kyrandia.png",
+    hint:
+      "Did you have the chance to play this game ? One of the best old school point and click ever made, it used to scare me when I was a kid.",
+    answers: {
+      a: "Kyrandia's Legend",
+      b: "The Legend of Kyrandia",
+      c: "K Legend",
+      d: "Korula",
+    },
+    correctAnswer: "The Legend of Kyrandia",
+  },
+  {
+    img: "./medievil.gif",
+    hint:
+      "The hero of this game was a funny skeleton. Damn I miss the Playstation 1 days. :'(",
+    answers: {
+      a: "DeDevil",
+      b: "Bebevil",
+      c: "Foobazvil",
+      d: "Medievil",
+    },
+    correctAnswer: "Medievil",
+  },
+  {
+    img: "./Fzero.jpg",
+    hint:
+      "Falcon Smash! This game franchise did not know any games since 2003. When will Captain Falcon make his return ? ",
+    answers: {
+      a: "G-Zero",
+      b: "X-Zero",
+      c: "F-Zero",
+      d: "Z-Zero",
+    },
+    correctAnswer: "F-Zero",
+  },
+  {
+    img: "./Pokemonred.png",
+    hint: "If you haven't played this game, did you even have a childhood ?",
+    answers: {
+      a: "Monkeymon",
+      b: "Pokemon",
+      c: "Digimon",
+      d: "Kebabmon",
+    },
+    correctAnswer: "Pokemon",
+  },
+  {
+    img: "./Unreal.jpg",
+    hint:
+      "This fps had one of the best community. The LAN's and competitions were intense with this one...",
+    answers: {
+      a: "Frags",
+      b: "Dominations",
+      c: "Immortal Tournament",
+      d: "Unreal Tournament",
+    },
+    correctAnswer: "Unreal Tournament",
+  },
+  {
+    img: "./Starfox.png",
+    hint:
+      "Famous for its iconic quote 'Do a barrel roll'! The music of this game was soooooo good. ",
+    answers: {
+      a: "Fox",
+      b: "Star Fox",
+      c: "Star Wing",
+      d: "Wing",
+    },
+    correctAnswer: "Star Wing",
+  },
+  {
+    img: "./Punch out.jpg",
+    hint:
+      "Little mac was a hell of a boxing champ. This game was on the NES, the first Nintendo console ever made :)",
+    answers: {
+      a: "Punch",
+      b: "Little Mac's Punch",
+      c: "Punch Out",
+      d: "Little Punch",
+    },
+    correctAnswer: "Punch Out",
+  },
+  {
+    img: "./Rtype.jpg",
+    hint:
+      "Beat'em all. One of the best of all. Finishing one meant you had some serious skills.",
+    answers: {
+      a: "V-Type",
+      b: "R-Type",
+      c: "A-Type",
+      d: "K-Type",
+    },
+    correctAnswer: "R-Type",
+  },
+  {
+    img: "./Rez.jpeg",
+    hint:
+      "Pretty hard to mix music with a game right ? This dreamcast game was a masterpiece. There were only 3 levels, but its design and music were a bliss.",
+    answers: {
+      a: "Rez",
+      b: "Fez",
+      c: "Kez",
+      d: "Mayonez",
+    },
+    correctAnswer: "Rez",
+  },
 ];
 
 // TYPEWRITING EFFECT
 
 var i = 0;
 var txt =
-  "Since its boom in the 70s, the video game industry has been continously shaping and creating a worldwide culture. Video games, in a sense, is like art, it can be a way for game developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. In this game, you will have to guess the title of the game you will see. Get ready to ruuuuuuuummmmmblllleeeeee! :D"; /* The text */
+  "Since its boom in the 70s, the video game industry has been continuously shaping and creating a worldwide culture. Video games, in a sense, is like art, it can be a way for game developers to express their creativity and emotions. And while the industry is growing, people nowadays tend to forget or ignore the old school classics. In this game, you will have to guess the title of the game you will see. Get ready to ruuuuuuuummmmmblllleeeeee! :D"; /* The text */
 var speed = 50; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {
@@ -244,7 +363,7 @@ function startGame() {
 }
 
 function startQuizz() {
-  storyIntroduction.classList.add("bounce-out-top")
+  storyIntroduction.classList.add("bounce-out-top");
   renderQuestion();
   delayedQuizz();
 }
@@ -258,7 +377,7 @@ function launchChrono() {
 
   countdownIntervalID = setInterval(function () {
     setTimer -= 1;
-    document.getElementById("theTimer").innerHTML ="Time: " + setTimer;
+    document.getElementById("theTimer").innerHTML = "Time: " + setTimer;
     if (setTimer == 0) {
       stopTimer();
       setResults();
@@ -279,17 +398,17 @@ function stopTimer(clbk) {
 
 function delayedQuizz() {
   setTimeout(() => {
-  storyIntroduction.style.display = "none";
-  quizzSection.style.display = "block";
-  },2000)
+    storyIntroduction.style.display = "none";
+    quizzSection.style.display = "block";
+  }, 2000);
 }
 
 function delayedStory() {
   setTimeout(() => {
-  animationSelect.style.display = "none";
-  storyIntroduction.style.display = "block";
-  typeWriter();
-  },2000)
+    animationSelect.style.display = "none";
+    storyIntroduction.style.display = "block";
+    typeWriter();
+  }, 2000);
 }
 
 // FUNCTIONS TO MAKE THE QUIZZ FUNCTIONAL
@@ -308,21 +427,21 @@ function btnActive(element) {
   element.classList.toggle("active");
   answerButton.forEach(function (btn) {
     if (btn1.classList.contains("active")) {
-      btn2.classList.remove("active")
-      btn3.classList.remove("active")
-      btn4.classList.remove("active")
+      btn2.classList.remove("active");
+      btn3.classList.remove("active");
+      btn4.classList.remove("active");
     } else if (btn2.classList.contains("active")) {
-      btn1.classList.remove("active")
-      btn3.classList.remove("active")
-      btn4.classList.remove("active")
+      btn1.classList.remove("active");
+      btn3.classList.remove("active");
+      btn4.classList.remove("active");
     } else if (btn3.classList.contains("active")) {
-      btn1.classList.remove("active")
-      btn2.classList.remove("active")
-      btn4.classList.remove("active")
+      btn1.classList.remove("active");
+      btn2.classList.remove("active");
+      btn4.classList.remove("active");
     } else if (btn4.classList.contains("active")) {
-      btn1.classList.remove("active")
-      btn2.classList.remove("active")
-      btn3.classList.remove("active")
+      btn1.classList.remove("active");
+      btn2.classList.remove("active");
+      btn3.classList.remove("active");
     }
   });
 }
@@ -348,11 +467,10 @@ function setResults() {
   answerButton.forEach(function (btn, i) {
     if (btn.classList.contains("active")) {
       chosenAnswer = btn.innerHTML;
-      nbBtnActive +=1;
+      nbBtnActive += 1;
     } else if (i === 3 && nbBtnActive === 0) {
       chosenAnswer = noMove;
     }
-    
   });
   if (chosenAnswer === rightAnswer) {
     score += 1;
@@ -405,13 +523,17 @@ function displayResultSection() {
   } else if (score <= 10) {
     resultText.innerHTML =
       "Nice one! I guess you know some stuff about video games ;)";
-  } else {
+  } else if (score <= 15) {
     resultText.innerHTML = "Oh...I see you're a man/woman of culture :D";
+  } else if (score <= 20) {
+    resultText.innerHTML = "You really like video games!";
+  } else {
+    resultText.innerHTML = "Damn...we could actually be friends, you're a true gamer!";
   }
 }
 
 function printtheResults() {
-  console.log(scoreTable)
+  console.log(scoreTable);
   for (let i = 0; i < scoreTable.scoreContainer.length; i++) {
     let choices = scoreTable.scoreContainer[i].chosen;
     let correctChoice = scoreTable.scoreContainer[i].correct;
