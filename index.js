@@ -148,7 +148,7 @@ const myQuestions = [
     correctAnswer: "Metal Slug",
   },
   {
-    img: "/Chrono-trigger.jpg",
+    img: "./Chrono-trigger.jpg",
     hint:
       "Some might consider it as one of the best RPG of all time...The drawings of the game were made by Dragon Ball's creator. Ouch.. I told you it was getting harder! ",
     answers: {
