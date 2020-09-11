@@ -5,6 +5,7 @@ const animationSelect = document.getElementById("main");
 const storyIntroduction = document.getElementById("introduction");
 const btnGame = document.querySelector("button.startGame");
 var typeWriting = document.getElementById("centered-element");
+const introMusic = document.getElementById("music");
 
 // CONSTS FOR THE QUIZZ SECTION
 const guessTitle = document.getElementById("guess-title");
@@ -359,6 +360,7 @@ function typeWriter() {
 
 function startGame() {
   animationSelect.classList.add("bounce-out-top");
+  introMusic.play()
   delayedStory();
 }
 
